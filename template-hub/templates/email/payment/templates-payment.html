@@ -1,0 +1,87 @@
+<!-- Payment Overdue -->
+<PMT_PAST_DUE>
+    <SUBJECT>Payment overdue reminder from Alliant Energy</SUBJECT>
+    <TITLE>PAYMENT OVERDUE</TITLE>
+    <header_image>{{{g_email_content_location}}}payment-email-header.png</header_image>
+    <MESSAGE>
+        <p style="padding-left: 20px">Dear Alliant Energy Customer,<br /><br/>
+
+        {{#if Article.number}}
+            <p style="padding-left: 20px">This is a reminder that your payment in the amount of {{fmtCurrency AmountDue}} is overdue from {{jodaPartial AmountDueDate 'MM/dd/yy'}} for Alliant Energy account beginning in {{fmtAccountFirstFour Article.number}}.</p>
+        {{else}}
+            <p style="padding-left: 20px">This is a reminder that your payment in the amount of {{fmtCurrency AmountDue}} is overdue from {{jodaPartial AmountDueDate 'MM/dd/yy'}} for your Alliant Energy account.</p>
+        {{/if}}
+        <p style="padding-left: 20px">Please log in to <a href="{{{g_my_account_link}}}">My Account</a> to make a payment. If you have already made your payment, thank you and please disregard this reminder.</p>
+
+        <p style="padding-left: 20px">We value your business and thank you for being our customer. If you need assistance, please contact us at {{g_phone_number_full}}.</p>
+    </MESSAGE>
+</PMT_PAST_DUE>
+
+<!-- Payment Reminder -->
+<PMT_DUE_DAYS>
+    <SUBJECT>Alliant Energy payment reminder</SUBJECT>
+    <TITLE>PAYMENT REMINDER</TITLE>
+    <header_image>{{{g_email_content_location}}}payment-email-header.png</header_image>
+    <MESSAGE>
+        <p style="padding-left: 20px">Dear Alliant Energy Customer,<br /><br/>
+
+        {{#if Article.number}}
+            <p style="padding-left: 20px">We'd like to remind you that a payment in the amount of {{fmtCurrency AmountDue}} is due on {{jodaPartial AmountDueDate 'MM/dd/yy'}} for your Alliant Energy account beginning in {{fmtAccountFirstFour Article.number}}.</p>
+        {{else}}
+            <p style="padding-left: 20px">We'd like to remind you that a payment in the amount of {{fmtCurrency AmountDue}} is due on {{jodaPartial AmountDueDate 'MM/dd/yy'}} for your Alliant Energy account.</p>
+        {{/if}}
+
+        <p style="padding-left: 20px">Please log in to <a href="{{{g_my_account_link}}}">My Account</a> to make a payment. If you have already made your payment, thank you and please disregard this reminder.</p>
+
+        <p style="padding-left: 20px">We value your business and thank you for being our customer. If you need assistance, please contact us at {{g_phone_number_full}}.</p>
+    </MESSAGE>
+</PMT_DUE_DAYS>
+
+<!-- Payment Status Posted -->
+<PMT_RECVD_POSTPAY>
+    <SUBJECT>Payment status notification from Alliant Energy</SUBJECT>
+    <TITLE>PAYMENT STATUS - POSTED</TITLE>
+    <header_image>{{{g_email_content_location}}}payment-email-header.png</header_image>
+    <MESSAGE>
+        <p style="padding-left: 20px">Dear Alliant Energy Customer,<br /><br/>
+
+        {{#if Article.number}}
+            <p style="padding-left: 20px">Your payment of {{fmtCurrency PaymentAmount}} on {{jodaPartial PaymentDate 'MM/dd/yy'}} has been applied to account beginning in {{fmtAccountFirstFour Article.number}}. Thank you for your payment.</p>
+        {{else}}
+            <p style="padding-left: 20px">Your payment of {{fmtCurrency PaymentAmount}} on {{jodaPartial PaymentDate 'MM/dd/yy'}} has been applied to your account. Thank you for your payment.</p>
+        {{/if}}
+
+        <p style="padding-left: 20px">Please note, some banks may take up to 48 hours before showing the transaction has been taken from your account.</p>
+
+        <p style="padding-left: 20px">We appreciate having you as a customer.</p>
+
+    </MESSAGE>
+</PMT_RECVD_POSTPAY>
+
+<!-- Payment Status Scheduled -->
+<PMT_SCHEDULED>
+    <SUBJECT>Payment status notification from Alliant Energy</SUBJECT>
+    <TITLE>PAYMENT STATUS - SCHEDULED</TITLE>
+    <MESSAGE>
+        <p style="padding-left: 20px">Dear Alliant Energy Customer,<br /><br/>
+
+        {{#if Article.number}}
+            <p style="padding-left: 20px">Your payment has been scheduled for the Alliant Energy account beginning in {{fmtAccountFirstFour Article.number}}. Thank you for your payment.</p>
+        {{else}}
+            <p style="padding-left: 20px">Your payment has been scheduled for your Alliant Energy account. Thank you for your payment.</p>
+        {{/if}}
+
+        <p style="padding-left: 20px">Simplify your life and enroll in <a href='https://www.alliantenergy.com/BillPayOptions/PaymentPrograms/AutomaticPayment?utm_source=WS&utm_campaign=automaticpayment'>Automatic Payment</a> to have your bill automatically deducated from your bank account each month. Sign up in <a href='https://myaccount.alliantenergy.com/OUCSSPortal/faces/oracle/webcenter/portalapp/pages/login.jspx?_adf.ctrl-state=u684lh65f_9&_afrLoop=173389679768628&_afrWindowMode=0&_afrWindowId=null#%40%3F_afrWindowId%3Dnull%26_afrLoop%3D173389679768628%26_afrWindowMode%3D0%26_adf.ctrl-state%3Ds0squixhx_4'>My Account</a> and visit Manage My Account & Programs.</p>
+          {{/if}}
+  
+ -        <p style="padding-left: 20px">Amount scheduled: {{fmtCurrency PaymentAmount}} on {{jodaPartial PaymentDate 'MM/dd/yy'}}. Your confirmation number is {{Confirmation}}.</p>
+ +        <p style="padding-left: 20px">We appreciate the opportunity to serve you. If you need assistance, please call {{g_phone_number_full}}. We are available 6 a.m. to 9 p.m. Monday through Saturday.</p>
+  
+      </MESSAGE>
+  </PMT_SCHEDULED>
+
+
+        <p style="padding-left: 20px">Amount scheduled: {{fmtCurrency PaymentAmount}} on {{jodaPartial PaymentDate 'MM/dd/yy'}}. Your confirmation number is {{Confirmation}}.</p>
+
+    </MESSAGE>
+</PMT_SCHEDULED>

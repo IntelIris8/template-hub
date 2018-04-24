@@ -1,0 +1,32 @@
+<!-- Payment Reminder -->
+<PMT_DUE_DAYS>
+Alliant Energy: Payment due for account beginning in {{{ fmtAccountFirstFour Article.number }}}\n
+Bal: {{{ fmtCurrency AmountDue }}}\n
+Due: {{{ jodaPartial AmountDueDate 'MM/dd/yy'}}}\n
+Reply PAY to pay by text\n
+Thank you if you already made your payment
+</PMT_DUE_DAYS>
+
+<!-- Payment Overdue -->
+<PMT_PAST_DUE>
+Alliant Energy: Payment overdue for acct beginning in {{{ fmtAccountFirstFour Article.number }}}\n
+Bal: {{{ fmtCurrency AmountDue }}}\n
+Due date: {{{ jodaPartial AmountDueDate 'MM/dd/yy' }}}\n
+Reply PAY to pay by text\n
+Thank you if you have already paid\n
+</PMT_PAST_DUE>
+
+<!-- Payment Status (SCHEDULED) -->
+<PMT_SCHEDULED>
+Alliant Energy: Payment scheduled for acct beginning in {{{ fmtAccountFirstFour Article.number }}}\n
+Confirmation: {{{ Confirmation }}}\n
+Amount submitted: {{{ fmtCurrency PaymentAmount }}}\n
+Date: {{{ jodaPartial PaymentDate 'MM/dd/yy' }}}\n
+Thank you for your payment.
+</PMT_SCHEDULED>
+
+<!-- Payment Status (POSTED)-->
+<PMT_RECVD_POSTPAY>
+Alliant Energy: Your payment of {{{ fmtCurrency PaymentAmount }}} on {{{ jodaPartial PaymentDate 'MM/dd/yy' }}} has been applied to acct beginning in {{{ fmtAccountFirstFour Article.number }}}.\n
+Thank you for your payment. We appreciate your business.
+</PMT_RECVD_POSTPAY>

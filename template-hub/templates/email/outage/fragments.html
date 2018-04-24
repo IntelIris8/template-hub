@@ -1,0 +1,13 @@
+<header_image>
+	{{{g_email_content_location}}}default-email-header.png
+</header_image>
+
+<!-- this uses AccountArticle.number instead of Article.number -->
+<LEFT_BOTTOM>
+	<td class="leftBottom" style="width: 180px;background-color: #f5f5f5;vertical-align: bottom;padding: 10px 30px 50px 30px;font-size: 0.7em;font-weight: bold;">
+		<p>This email was sent to <strong>{{{Contact.contact}}}</strong> for Alliant Energy account beginning with {{fmtAccountFirstFour AccountArticle.number}}.</p>
+		<p>Log in to <a href="{{{g_my_account_link}}}" style="color: #00b4eb;font-weight: bold;">{{{g_my_account_link_text}}}</a> to update your email address, manage alert preferences
+			{{#stopLinks}}or <a href="{{{g_unsubscribe_link}}}?{{{disenrollParams}}}" style="color: #00b4eb;font-weight: bold;">unsubscribe</a>.{{/stopLinks}}</p>
+		<p>This is an automated message. Please do not reply.</p>
+	</td>
+</LEFT_BOTTOM>

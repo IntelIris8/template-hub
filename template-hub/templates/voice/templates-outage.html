@@ -1,0 +1,111 @@
+<!-- NOTE use 'alliant' instead of 'Alliant', otherwise Twilio's text to speech engine pronounces Alliant incorrectly-->
+
+<!-- USER INPUT OPTIONS -->
+<VOICE_OPTION_REPEAT>
+    To repeat this message, press one
+</VOICE_OPTION_REPEAT>
+
+<VOICE_OPTION_DISENROLL>
+    To stop receiving outage notifications, press two
+</VOICE_OPTION_DISENROLL>
+
+<VOICE_OPTION_REPORT_OUTAGE>
+    If you are still without power, please press three now
+</VOICE_OPTION_REPORT_OUTAGE>
+
+<VOICE_OPTION_PAUSE_CONTACT>
+    To pause outage notifications for 24 hours, press four
+</VOICE_OPTION_PAUSE_CONTACT>
+
+
+<!-- REACTION TO USER INPUT -->
+<VOICE_DISENROLLED>
+    You have unsubscribed from outage notifications
+</VOICE_DISENROLLED>
+
+<VOICE_OUTAGE_REPORTED>
+    Thank you for reporting your outage. We will contact you with updates as they become available
+</VOICE_OUTAGE_REPORTED>
+
+<<VOICE_PAUSED_CONTACT>
+    You have paused outage notifications for 24 hours. Outage notifications will resume at that time
+</VOICE_PAUSED_CONTACT>
+
+<!-- OUTAGE NON-AGGREGATED -->
+<OUT_NEW>
+    Hello. This is alliant energy calling to notify you of a possible power outage affecting {{{ Address.longAddress }}}{{#if (isValidOutageCause Cause)}}caused by {{fmtOutageCause Cause}}{{/if}}.\n
+    Our crews will restore your power as quickly and safely as possible.\n
+
+    {{#if (isExpired Etr) }}
+    We are currently assessing conditions and do not currently have an Estimated Restoration Time.\n
+    {{else}}
+    Based on current information, we estimate your power will be restored by {{ jodaDateTime Etr "hh:mm a 'on' MMMM dd" }}.\n
+    {{/if}}
+
+    This estimate may change based on conditions encountered by our crews. If this happens, we will provide you with an updated restoration time.\n
+
+    Please stay away from downed power lines - they may be dangerous.
+</OUT_NEW>
+
+<OUT_ACTIVE>
+    Hello. This is alliant energy calling with an update for the outage in the area of {{{ Address.longAddress }}}.\n
+
+    {{#if (isExpired Etr) }}
+    We are currently assessing conditions and do not currently have an Estimated Restoration Time.\n
+    {{else}}
+    Your estimated restoration time is now {{ jodaDateTime Etr "hh:mm a 'on' MMMM dd" }}.\n
+    {{/if}}
+
+    {{#if (isValidOutageCause Cause)}}This outage was caused by {{fmtOutageCause Cause}}.\n{{/if}}
+
+    {{#if (isValidCrewStatus CrewStatus)}}{{fmtCrewStatusIVR CrewStatus}}\n{{/if}}
+
+    We will contact you with updates as they become available.\n
+
+    We apologize for any inconvenience this outage may have caused, and we thank you for being our customer.
+
+</OUT_ACTIVE>
+
+<OUT_RESTORED>
+    Hello. This is alliant energy calling.\n
+
+    Energy crews have completed repairs and power should have been restored to {{{Address.longAddress}}}{{#unless (isExpired RestoredAt)}} at {{ jodaDateTime RestoredAt "hh:mm a 'on' MMMM dd" }}{{/unless}}.\n
+
+    {{#if (isValidOutageCause Cause)}}This outage was caused by {{fmtOutageCause Cause}}.\n{{/if}}
+
+    We apologize for any inconvenience and appreciate having you as a customer.\n Thank you for your patience.
+</OUT_RESTORED>
+
+<OUT_CANCELLED>
+    Hello. This is alliant Energy calling.\n
+
+    We have investigated the power outage reported earlier, and have determined that the outage at {{{Address.longAddress}}} has been resolved.\n
+
+    We apologize for any inconvenience, and appreciate having you as a customer.
+</OUT_CANCELLED>
+
+
+<!-- MISC -->
+<SYSTEM_ERROR>
+    An error has occurred with this message
+</SYSTEM_ERROR>
+
+<TEST_MESSAGE>
+    This is a test message from alliant energy
+</TEST_MESSAGE>
+
+<VOICE_NO_INPUT>
+    Thank you
+</VOICE_NO_INPUT>
+
+<VOICE_NO_INPUT_OUT_RESTORED>
+    Thank you
+</VOICE_NO_INPUT_OUT_RESTORED>
+
+
+<VOICE_BAD_ACTION>
+    The digit you have pressed is not valid.
+</VOICE_BAD_ACTION>
+
+
+

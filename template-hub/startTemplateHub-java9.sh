@@ -1,0 +1,1 @@
+java -jar --add-modules java.xml.bind template-hub-9x-0.0.2.jar --env-file=./env.json --root-dir=./ --server.port=8080 --security.ignored=/**   --newline-override-mode=true

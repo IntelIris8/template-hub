@@ -1,0 +1,80 @@
+
+<OUT_NEW>
+    <SUBJECT>New outage information from Alliant Energy</SUBJECT>
+    <TITLE>NEW OUTAGE</TITLE>
+    <MESSAGE>
+        <p style="padding-left: 20px">Dear Alliant Energy Customer,<br /><br/>
+
+        <p style="padding-left: 20px">We have a report of a possible power outage affecting {{Address.longAddress}}.{{#if (isValidOutageCause Cause)}} This outage was caused by {{fmtOutageCause Cause}}.{{/if}}</p>
+
+        <p style="padding-left: 20px">Our crews will restore your power as quickly and safely as possible.</p>
+
+
+        {{#if (isExpired Etr)}}
+        <p style="padding-left: 20px">We are currently assessing conditions and do not currently have an Estimated Restoration Time.</p>
+        {{else}}
+        <p style="padding-left: 20px">Based on current information, we estimate your power will be restored by {{ jodaDateTime Etr 'MM/dd/yy hh:mm a'}}.</p>
+        {{/if}}
+
+        <p style="padding-left: 20px">This estimate may change based on conditions encountered by our crews. If this happens, we will provide you with an updated restoration time.</p>
+
+        <p style="padding-left: 20px">Please stay away from downed power lines - they may be dangerous.</p>
+
+        <p style="padding-left: 20px">Thank you for your patience.</p>
+    </MESSAGE>
+</OUT_NEW>
+
+
+
+<OUT_ACTIVE>
+    <SUBJECT>Outage update from Alliant Energy</SUBJECT>
+    <TITLE>OUTAGE UPDATE</TITLE>
+    <MESSAGE>
+        <p style="padding-left: 20px">Dear Alliant Energy Customer,<br /><br/>
+
+        <p style="padding-left: 20px">Your outage status has been updated for {{Address.longAddress}}.</p>
+
+        {{#if (isValidOutageCause Cause)}}
+        <p style="padding-left: 20px">This outage was caused by {{fmtOutageCause Cause}}.</p>
+        {{/if}}
+
+        {{#if (isValidCrewStatus CrewStatus)}}
+        <p style="padding-left: 20px">Crew status: {{fmtCrewStatus CrewStatus}}.</p>
+        {{/if}}
+
+        {{#if (isExpired Etr)}}
+        <p style="padding-left: 20px">We are currently assessing conditions and do not currently have an Estimated Restoration Time.</p>
+        {{else}}
+        <p style="padding-left: 20px">Based on current information, we now estimate that power will be restored by {{ jodaDateTime Etr 'MM/dd/yy hh:mm a'}}.</p>
+        {{/if}}
+
+        <p style="padding-left: 20px">This estimate may change based on conditions encountered by our crews. If this happens, we will provide you with an updated restoration time.</p>
+        <p style="padding-left: 20px">We continue to safely restore power to all customers in your area. We apologize for any inconvenience. For additional information, please visit <a href="{{{g_alliant_outage_link}}}">{{g_alliant_outage_link_text}}</a>.</p>
+        <p style="padding-left: 20px">Please stay away from downed power lines - they may be dangerous.</p>
+        <p style="padding-left: 20px">Thank you for your patience.</p>
+    </MESSAGE>
+</OUT_ACTIVE>
+
+
+<OUT_RESTORED>
+    <SUBJECT>Power restoration update from Alliant Energy</SUBJECT>
+    <TITLE>POWER RESTORED</TITLE>
+    <MESSAGE>
+        <p style="padding-left: 20px">Dear Alliant Energy Customer,<br /><br/>
+        <p style="padding-left: 20px">Energy crews have completed repairs and power should have been restored to {{Address.longAddress}}{{#if ResolvedAt}} at {{jodaDateTime ResolvedAt 'MM/dd/yy hh:mm a'}}{{/if}}.{{#if (isValidOutageCause Cause)}} Outage cause: {{fmtOutageCause Cause}}.{{/if}}</p>
+        <p style="padding-left: 20px">We apologize for any inconvenience and appreciate having you as a customer. Thank you for your patience.</p>
+        <p style="padding-left: 20px">If you are still without power, please let us know by reporting your outage at <a href="{{{g_alliant_outage_link}}}">{{g_alliant_outage_link_text}}</a> or call {{g_phone_number_full}}.</p>
+    </MESSAGE>
+</OUT_RESTORED>
+
+
+<OUT_CANCELLED>
+    <SUBJECT>Outage update from Alliant Energy</SUBJECT>
+    <TITLE>OUTAGE CANCELLED</TITLE>
+    <MESSAGE>
+        <p style="padding-left: 20px">Dear Alliant Energy Customer,<br /><br/>
+        <p style="padding-left: 20px">The outage reported at {{Address.longAddress}} has been resolved.</p>
+        <p style="padding-left: 20px">We apologize for any inconvenience and appreciate having you as a customer. Thank you for your patience.</p>
+        <p style="padding-left: 20px">If you are without power, please let us know by reporting your outage at <a href="{{{g_alliant_outage_link}}}">{{g_alliant_outage_link_text}}</a> or call {{g_phone_number_full}}.</p>
+    </MESSAGE>
+</OUT_CANCELLED>

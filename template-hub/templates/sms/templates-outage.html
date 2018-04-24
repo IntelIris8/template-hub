@@ -1,0 +1,30 @@
+<!-- TODO add aggregate templates (?) -->
+
+<OUT_NEW>
+	Alliant Energy: Possible power outage identified @ {{Address.shortAddress}}.\n
+	Estimated time on: {{#if (isExpired Etr)}}Assessing conditions - no current est. restoration time{{else}}{{jodaDateTime Etr 'MM/dd h:mma'}}{{/if}}\n
+	Text STOP to opt out.\n
+	Reply HELP for info
+</OUT_NEW>
+
+<OUT_ACTIVE>
+	Alliant Energy: Outage update @ {{Address.shortAddress}}\n
+	Est. time on: {{#if (isExpired Etr)}}Assessing conditions - no current est. restoration time{{else}}{{jodaDateTime Etr 'MM/dd h:mma'}}{{/if}}\n
+	{{#if (isValidCrewStatus CrewStatus)}}Crews: {{fmtCrewStatus CrewStatus}}\n{{/if}}
+	{{#if (isValidOutageCause Cause)}}Cause: {{fmtOutageCause Cause}}\n{{/if}}
+	Thank you for your patience.
+</OUT_ACTIVE>
+
+<OUT_RESTORED>
+	Alliant Energy: Power restored @ {{Address.shortAddress}}\n
+	{{#if ResolvedAt}}Restored @ {{jodaDateTime ResolvedAt 'MM/dd h:mma'}}\n{{/if}}
+	{{#if (isValidOutageCause Cause)}}Cause: {{fmtOutageCause Cause}}\n{{/if}}
+	Reply OUT if still without power\n
+	Thanks for your patience
+</OUT_RESTORED>
+
+<OUT_CANCELLED>
+	Alliant Energy: Previous outage @ {{Address.shortAddress}} has been resolved.\n
+	Reply OUT if still without power\n
+	Thank you for your patience
+</OUT_CANCELLED>

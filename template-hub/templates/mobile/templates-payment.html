@@ -1,0 +1,40 @@
+<!-- Payment Reminder -->
+<PMT_DUE_DAYS>
+	<ALERT>
+		Payment of {{fmtCurrency AmountDue}} is due on {{jodaPartial AmountDueDate 'MM/dd/yy'}} for acct beginning in {{fmtAccountFirstFour Article.number}}. Log in to pay.
+	</ALERT>
+	<MESSAGE>
+		Your payment in the amount of {{fmtCurrency AmountDue}} is due on {{jodaPartial AmountDueDate 'MM/dd/yy'}} for account beginning in {{fmtAccountFirstFour Article.number}}. Please log in to make a payment. If you have already made this payment, thank you and please disregard this reminder.
+	</MESSAGE>
+</PMT_DUE_DAYS>
+
+<!-- Payment Overdue -->
+<PMT_PAST_DUE>
+	<ALERT>
+		Your payment of {{fmtCurrency AmountDue}} is overdue for acct beginning in {{{fmtAccountFirstFour Article.number}}}. Log in to pay.
+	</ALERT>
+	<MESSAGE>
+		Your payment in the amount of {{fmtCurrency AmountDue}} is overdue from {{jodaPartial AmountDueDate 'MM/dd/yy'}} for account beginning in {{fmtAccountFirstFour Article.number}}. Please log in to make a payment. If you have already made this payment, thank you and please disregard this reminder.
+	</MESSAGE>
+</PMT_PAST_DUE>
+
+<!-- Payment Status (SCHEDULED) -->
+<PMT_SCHEDULED>
+	<ALERT>
+		Scheduled payment of {{fmtCurrency PaymentAmount}} on {{jodaPartial PaymentDate 'MM/dd/yy'}} for acct beginning in {{fmtAccountFirstFour Article.number}}. Thank you.
+	</ALERT>
+	<MESSAGE>
+		Your payment has been scheduled for the Alliant Energy account beginning in {{fmtAccountFirstFour Article.number}}. Thank you for your payment.\n
+		Amount Scheduled: {{fmtCurrency PaymentAmount}} on {{jodaPartial PaymentDate 'MM/dd/yy'}}. Your confirmation number is {{Confirmation}}.
+	</MESSAGE>
+</PMT_SCHEDULED>
+
+<!-- Payment Status (POSTED)-->
+<PMT_RECVD_POSTPAY>
+	<ALERT>
+		Payment of {{fmtCurrency PaymentAmount}} on {{jodaPartial PaymentDate 'MM/dd/yy'}} for acct beginning in {{fmtAccountFirstFour Article.number}} has posted. Thank you.
+	</ALERT>
+	<MESSAGE>
+		Your payment of {{fmtCurrency PaymentAmount}} on {{jodaPartial PaymentDate 'MM/dd/yy'}} for account beginning in {{fmtAccountFirstFour Article.number}} has posted. Thank you for your payment. We appreciate having you as a customer. 
+	</MESSAGE>
+</PMT_RECVD_POSTPAY>

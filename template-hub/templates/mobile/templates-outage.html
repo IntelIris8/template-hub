@@ -1,0 +1,39 @@
+<!-- Outage New -->
+<OUT_NEW>
+	<ALERT>
+		An outage has been reported in your area. Est. restoration time: {{#if (isExpired Etr)}}Assessing conditions{{else}}{{jodaDateTime Etr 'MM/dd h:mma'}}{{/if}}.
+	</ALERT>
+	<MESSAGE>
+		A possible power outage has been reported in the area of {{Address.shortAddress}}. Estimated restoration time: {{#if (isExpired Etr)}}Assessing conditions - no current est. restoration time{{else}}{{jodaDateTime Etr 'MM/dd h:mma'}}{{/if}}. Thank you for your patience.
+	</MESSAGE>
+</OUT_NEW>
+
+<!-- Outage Updated -->
+<OUT_ACTIVE>
+	<ALERT>
+		Updated outage information available. New est. restoration time: {{#if (isExpired Etr)}}Assessing conditions{{else}}{{jodaDateTime Etr 'MM/dd h:mma'}}{{/if}}.
+	</ALERT>
+	<MESSAGE>
+		Your outage status has been updated for {{Address.shortAddress}}. {{#if (isExpired Etr)}}Assessing conditions - no current est. restoration time{{else}}Based on current information, we now estimate that power will be restored by {{jodaDateTime Etr 'MM/dd h:mma'}}{{/if}}.{{#if (isValidCrewStatus CrewStatus)}} Crews are {{fmtCrewStatus CrewStatus}}.{{/if}}{{#if (isValidOutageCause Cause)}} Cause: {{fmtOutageCause Cause}}{{/if}}. Thank you for your patience.
+	</MESSAGE>
+</OUT_ACTIVE>
+
+<!-- Outage Restored -->
+<OUT_RESTORED>
+	<ALERT>
+		The outage at {{Address.shortAddress}} has been restored.{{#if (isValidOutageCause Cause)}} Cause was {{fmtOutageCause Cause}}.{{/if}}
+	</ALERT>
+	<MESSAGE>
+		Alliant Energy crews have completed repairs and power should have been restored to {{Address.shortAddress}}.{{#if ResolvedAt}} The restoration was completed at {{jodaDateTime ResolvedAt 'MM/dd h:mma'}}.{{/if}}{{#if (isValidOutageCause Cause)}} Cause: {{fmtOutageCause Cause}}.{{/if}}We apologize for any inconvenience and appreciate having you as a customer. If you are still without power, please let us know by reporting your outage through the app or call 1-800-ALLIANT (1-800-255-4268).
+	</MESSAGE>
+</OUT_RESTORED>
+
+<!-- Outage Cancelled -->
+<OUT_CANCELLED>
+	<ALERT>
+		Outage at {{Address.shortAddress}} is resolved. Contact us if still without power. 
+	</ALERT>
+	<MESSAGE>
+		The outage reported at {{Address.shortAddress}} has been resolved. We apologize for any inconvenience and appreciate having you as a customer. If you are still without power, please let us know by reporting your outage through the app or call 1-800-ALLIANT (1-800-255-4268).
+	</MESSAGE>
+</OUT_CANCELLED>

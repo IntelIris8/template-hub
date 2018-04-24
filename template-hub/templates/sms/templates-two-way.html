@@ -1,0 +1,305 @@
+<POSTING_ACCOUNT_NUMBER_NEEDED>
+    Alliant Energy: Enter the 10-digit account # associated to account. MSG & DATA RATES APPLY. 1 msg/request. Reply STOP to cancel, HELP for help.
+</POSTING_ACCOUNT_NUMBER_NEEDED>
+
+<!-- TODO decide on potentially new verbiage -->
+<!--  Alliant Energy: This device is already registered to receive text notifications$if(ACCOUNT_NBR_FIRST_FOUR)$ for account beginning in $ACCOUNT_NBR_FIRST_FOUR$$endif$. Reply HELP for options. -->
+<POSTING_ACCOUNT_NUMBER_ALREADY_REGISTERED>
+    Alliant Energy: This device is already registered to receive text notifications. Reply HELP for options.
+</POSTING_ACCOUNT_NUMBER_ALREADY_REGISTERED>
+
+<POSTING_ACCOUNT_AUTH_NEEDED>
+    Alliant Energy: Please enter the ZIP code for the billing address of this account.
+</POSTING_ACCOUNT_AUTH_NEEDED>
+
+<POSTING_ACCOUNT_NUMBER_INVALID>
+    Alliant Energy: The information provided does not appear to be valid. Please text REG to try again. Text HELP for help or please call us at 1-800-255-4268.
+</POSTING_ACCOUNT_NUMBER_INVALID>
+
+<POSTING_ACCOUNT_AUTH_FAILED>
+    Alliant Energy: ZIP code does not match the account. Please re-enter ZIP Code to try again or text HELP for help.
+</POSTING_ACCOUNT_AUTH_FAILED>
+
+<!-- TODO verify this matches POSTING_CONTACT_CONFIRMED and POSTING_REGISTRATION_AFFIRMATION !-->
+<POSTING_ACCOUNT_REGISTERED>
+    Alliant Energy: Thank you for registering this device for account beginning in $ACCOUNT_NBR_FIRST_FOUR$. You are now registered to receive alerts for which you are eligible. Reply HELP for help or STOP to cancel alerts.
+</POSTING_ACCOUNT_REGISTERED>
+
+<POSTING_NOT_REGISTERED>
+    Alliant Energy: Register your device to use this feature. Reply REG to begin.
+</POSTING_NOT_REGISTERED>
+
+<!-- USED FOR OUTAGE  ONLY? MUST VERIFY -->
+<POSTING_ACCOUNT_CHOICE_NEEDED>
+    Alliant Energy: Reply $ACCT_LIST_NICK_ADDR$$if(END_OF_LIST)$\n
+    Reply REG for new account$endif$
+</POSTING_ACCOUNT_CHOICE_NEEDED>
+
+<POSTING_ACCOUNT_STATUS_CHOICE_NEEDED>
+    Alliant Energy: Reply $ACCT_LIST_ADDR_OUT_STAT$$if(END_OF_LIST)$\n
+    Reply REG for new account$endif$
+</POSTING_ACCOUNT_STATUS_CHOICE_NEEDED>
+
+<POSTING_ACCOUNT_NOT_FOUND>
+    Alliant Energy: Account not found. Please try again. Reply HELP for help.
+</POSTING_ACCOUNT_NOT_FOUND>
+
+<!-- TODO insert "text commands web page" bitly link -->
+<POSTING_HELP>
+    Alliant Energy:\n
+    Keywords: REG, SUB, STOP, PAUSE, RESUME, OUT, STAT, BAL, PAY, APP.\n
+    1 msg/request. Msg&data rates may apply. STOP to cancel or call 1-800-255-4268. For more information, go to bit.ly/2gAqBpy.
+</POSTING_HELP>
+
+<SYSTEM_ERROR>
+    Alliant Energy: There was a system error. Please try again later. Thank you for your patience. If this is an emergency, please contact us at 1-800-255-4268.
+</SYSTEM_ERROR>
+
+<USER_ERROR>
+    Alliant Energy: We could not recognize your message. Please try again. Reply HELP for help.
+</USER_ERROR>
+
+<POSTING_ACCEPT_TERMS_COND>
+    Alliant Energy: Reply Y to accept alert terms & conditions at bit.ly/2wTvkJU. Std msg & data rates apply. STOP to cancel. HELP for help.
+</POSTING_ACCEPT_TERMS_COND>
+
+<POSTING_STATUS_NO_OUTAGE>
+    Alliant Energy: Our records indicate no known outage affecting $ACCT_ADDR$ at this time. If you are without power, reply Y to report the outage.
+</POSTING_STATUS_NO_OUTAGE>
+
+<!-- TODO document this hack or provide a better fix -->
+<!-- g_new_line is used to circumvent an issue with \n inside of stringtemplate expression -->
+<POSTING_STATUS_KNOWN_OUTAGE>
+    Alliant Energy:\n
+    Outage identified at $ACCT_ADDR$\n
+
+    $if(ETR_EXPIRED)$
+        Est. restoration: Assessing conditions - no current est. restoration time$g_new_line$
+    $else$
+        $if(ETR)$
+            Est. restoration: $ETR$$g_new_line$
+        $endif$
+    $endif$
+
+    $if(CAUSE)$Cause: $CAUSE$$g_new_line$$endif$
+    $if(CREW_STATUS)$Crew status: $CREW_STATUS$$g_new_line$$endif$
+    To report an outage, reply Y
+</POSTING_STATUS_KNOWN_OUTAGE>
+
+<POSTING_CONFIRMATION_NEEDED>
+    Alliant Energy: Reply Y to report an electrical outage at $ACCT_ADDR$. If this is an emergency such as a downed wire or gas odor, call 1-800-255-4268.
+</POSTING_CONFIRMATION_NEEDED>
+
+<!-- OUTAGE REPORTED, AND IS KNOWN -->
+<POSTING_OUTAGE_KNOWN>
+    Alliant Energy: Thank you. We are aware of an outage in the area of $ACCT_ADDR$. We will work to restore power as quickly and safely as possible. Text STAT for details.
+</POSTING_OUTAGE_KNOWN>
+
+<!-- OUTAGE REPORT, AND IS NOT KNOWN -->
+<POSTING_OUTAGE_REPORTED>
+    Alliant Energy: Thank you for reporting an outage affecting $ACCT_ADDR$. We will work to restore power as quickly & safely as possible. Please allow 10 min for system update. Text STAT for details.
+</POSTING_OUTAGE_REPORTED>
+
+<POSTING_ACCOUNT_NUMBER_CHOICE_SUBSCRIBE>
+    Alliant Energy:\n
+    $SUB_MOD_ACCOUNT_LIST$
+</POSTING_ACCOUNT_NUMBER_CHOICE_SUBSCRIBE>
+
+<POSTING_NO_MISSING_SUBSCRIPTIONS>
+    Alliant Energy: This device is already subscribed to all available alerts. Reply STOP to modify subscriptions.
+</POSTING_NO_MISSING_SUBSCRIPTIONS>
+
+<POSTING_SUBSCRIPTION_CHOICE_SUBSCRIBE>
+    Alliant Energy:\n
+    $SUB_MOD_SUBSCRIPTION_LIST$
+</POSTING_SUBSCRIPTION_CHOICE_SUBSCRIBE>
+
+<!-- TODO should this also contain "for account beginning $ACCOUNT_NBR_FIRST_FOUR$"?  -->
+<POSTING_SUBSCRIPTION_ADDED>
+    Alliant Energy: This device is now subscribed to $SUBSCRIPTION_LINE$. $if(HAS_MISSING_SUBSCRIPTIONS)$Reply SUB to sign up for another program. $endif$Reply STOP to modify subscriptions.
+</POSTING_SUBSCRIPTION_ADDED>
+
+<POSTING_ACCOUNT_NUMBER_CHOICE_STOP>
+    Alliant Energy:\n
+    $SUB_MOD_ACCOUNT_LIST$
+</POSTING_ACCOUNT_NUMBER_CHOICE_STOP>
+
+<POSTING_SUBSCRIPTION_CHOICE_STOP>
+    Alliant Energy:\n
+    $SUB_MOD_SUBSCRIPTION_LIST$
+</POSTING_SUBSCRIPTION_CHOICE_STOP>
+
+<POSTING_SUBSCRIPTION_STOPPED_ALL>
+    Alliant Energy: You have stopped all alerts for account beginning in $ACCOUNT_NBR_FIRST_FOUR$. Reply REG to reactivate alerts.
+</POSTING_SUBSCRIPTION_STOPPED_ALL>
+
+<!-- DEPENDENT ON VERBIAGE IN programs_en_US.properties -->
+<POSTING_SUBSCRIPTION_STOPPED_ONE>
+Alliant Energy: You have stopped $SUBSCRIPTION_LINE$ for account beginning in $ACCOUNT_NBR_FIRST_FOUR$. Reply SUB to reactivate alerts.
+</POSTING_SUBSCRIPTION_STOPPED_ONE>
+
+<POSTING_SUBSCRIPTION_STOPPED_ALL_ACCOUNTS>
+    Alliant Energy: You have stopped all alerts for all of your accounts. Reply REG to reactivate alerts.
+</POSTING_SUBSCRIPTION_STOPPED_ALL_ACCOUNTS>
+
+<!-- needed for SPEEDY REG -->
+<POSTING_REG_ACCOUNT_CHOICE_NEEDED>
+    Alliant Energy:\n
+    Reply $ACCT_LIST_NICK_ADDR$\n
+    $if(END_OF_LIST)$
+    or Reply with a 10-digit account # associated to account
+    $endif$\n
+</POSTING_REG_ACCOUNT_CHOICE_NEEDED>
+
+<ACTION_CANCELLED>
+    Alliant Energy: You have cancelled this transaction. Reply HELP for help.
+</ACTION_CANCELLED>
+
+<!-- TODO verify that each controller using this template populates AlliantVariable.ACCOUNT_NBR_FIRST_FOUR -->
+<POSTING_ACCOUNT_NOT_GOOD>
+    Alliant Energy: We are unable to process your request for account beginning in $ACCOUNT_NBR_FIRST_FOUR$. Please contact us at 1-800-255-4268.
+</POSTING_ACCOUNT_NOT_GOOD>
+
+<POSTING_SUBSCRIPTION_PAUSED_ALL>
+    Alliant Energy: You have paused alerts for this device for 24 hours. Reply RESUME to reactivate sooner.
+</POSTING_SUBSCRIPTION_PAUSED_ALL>
+
+<POSTING_SUBSCRIPTION_RESUMED_ALL>
+    Alliant Energy: Alerts have been resumed.
+</POSTING_SUBSCRIPTION_RESUMED_ALL>
+
+<!-- TODO reminder to add any templates used in ConversationUtilities#determineTemplateForInvalidArticle() -->
+
+<!-- TODO VERIFY -->
+<POSTING_TOO_MANY_ACCOUNTS>
+    Alliant Energy: This number is associated with more than 20 accounts. Please visit bit.ly/2j5jPUO to sign up for alerts.
+</POSTING_TOO_MANY_ACCOUNTS>
+
+<!-- TODO USE IN CUSTOM OUT/STAT FLOWS -->
+<POSTING_TOO_MANY_PREMISES>
+    Alliant Energy: This number is associated with more than 20 premises. To report an outage, please contact us at 1-800-255-4268.
+</POSTING_TOO_MANY_PREMISES>
+
+<!-- TODO USE IN CUSTOM OUT/STAT FLOWS -->
+<POSTING_PREMISE_NOT_ELIGIBLE>
+    Alliant Energy: We cannot process your request. To report an outage or an emergency like a downed wire or gas outage, please contact 1-800-255-4268 immediately.
+</POSTING_PREMISE_NOT_ELIGIBLE>
+
+<!-- used when reporting an outage but the premise is ineligible BUT account validation returns it is eligible -->
+<SYSTEM_ERROR_OUTAGE>
+    Alliant Energy: We cannot process your request. To report an outage or an emergency like a downed wire or gas outage, please contact 1-800-255-4268 immediately.
+</SYSTEM_ERROR_OUTAGE>
+
+<POSTING_BALANCE>
+Alliant Energy:\n
+$if(!ACCOUNT_NBR)$
+Current balance not available for account beginning in $ACCOUNT_NBR_FIRST_FOUR$.\n
+$endif$
+$if(ACCOUNT_NBR)$
+Current bal: \$$STATEMENT_BALANCE$ for account beginning in $ACCOUNT_NBR_FIRST_FOUR$.\nTo Pay your bill using saved banking information, text PAY
+$endif$
+</POSTING_BALANCE>
+
+<POSTING_ZERO_BALANCE>
+    Alliant Energy:\n
+    $if(!ACCOUNT_NBR)$
+    Current balance not available for account beginning in $ACCOUNT_NBR_FIRST_FOUR$.\n
+    $endif$
+    $if(ACCOUNT_NBR)$
+    Current bal: \$$STATEMENT_BALANCE$ for account beginning in $ACCOUNT_NBR_FIRST_FOUR$. No payment is due at this time.\n
+    $endif$
+</POSTING_ZERO_BALANCE>
+
+<POSTING_NEGATIVE_BALANCE>
+    Alliant Energy:\n
+    $if(!ACCOUNT_NBR)$
+    Current balance not available for account beginning in $ACCOUNT_NBR_FIRST_FOUR$.\n
+    $endif$
+    $if(ACCOUNT_NBR)$
+    Current bal: Credit of \$$STATEMENT_BALANCE$ for account beginning in $ACCOUNT_NBR_FIRST_FOUR$. No payment is due at this time.\n
+    $endif$
+</POSTING_NEGATIVE_BALANCE>
+
+
+<MAINTENANCE>
+    Alliant Energy: The system is currently unavailable due to maintenance. Please try again later.
+</MAINTENANCE>
+
+<!-- PAY -->
+
+<WEB_USER_ID_NEEDED>
+    Alliant Energy: For security purposes, enter your My Account User ID. If you forgot it, or need to create a new one, go to bit.ly/2j5jPUO.
+</WEB_USER_ID_NEEDED>
+
+<POSTING_PAYMENT_CONFIRMATION>
+    Alliant Energy: Thank you for submitting your payment of \$$PAYMENT_AMOUNT_VALUE$. Your confirmation number is $PAYMENT_CONFIRMATION_NUMBER$. Note: Fees apply to returned payments.
+</POSTING_PAYMENT_CONFIRMATION>
+
+<PAYMENT_STATUS_FAILURE>
+    Alliant Energy: Your payment failed to submit. Please call 1-800-255-4268 for assistance.
+</PAYMENT_STATUS_FAILURE>
+
+<ROUTING_NUMBER_INVALID>
+    Alliant Energy: There is an issue with your bank routing number. Please go to bit.ly/2hjMLb5 to verify your bank information, or contact your bank.
+</ROUTING_NUMBER_INVALID>
+
+<!-- TODO MUST TEST -->
+<INVALID_PAYMENT_AMOUNT>
+    Alliant Energy: You entered an invalid payment amount. Amount must be greater than \$1 and can be up to $AMOUNT_DUE$. Please enter a valid payment amount.
+</INVALID_PAYMENT_AMOUNT>
+
+<POSTING_NO_PAYMENT_METHOD>
+    Alliant Energy: Bank information must be saved to your My Account to pay-by-text. Go to bit.ly/2hjMLb5 to save bank information for future pay-by-text.
+</POSTING_NO_PAYMENT_METHOD>
+
+<POSTING_PAYMENT_NOT_ELIGIBLE>
+    Alliant Energy: Your account is not eligible for pay by text. Please call us at 1-800-255-4268 to make a payment.
+</POSTING_PAYMENT_NOT_ELIGIBLE>
+
+<WEB_USER_ID_MISMATCH>
+    Alliant Energy: The User ID you provided does not match our records. Please re-enter. If you can't remember your User ID, go to bit.ly/2j5jPUO for help.
+</WEB_USER_ID_MISMATCH>
+
+<POSTING_PAYMENT_AUTHORIZATION>
+    Alliant Energy: Reply Y to pay $PAYMENT_AMOUNT$ today for acct beginning in $ACCOUNT_NBR_FIRST_FOUR$ using $PAYMENT_METHOD_IDENTIFIER$. Reply N to cancel. Approved payments can't be changed
+</POSTING_PAYMENT_AUTHORIZATION>
+
+<DUPLICATE_PAYMENT_ERROR>
+    Alliant Energy: We are unable to process your transaction. A payment for this month's bill is already in process. Please call 1-800-255-4268 with questions.
+</DUPLICATE_PAYMENT_ERROR>
+
+<NO_PAYMENT_DUE>
+    Alliant Energy: You currently have a credit of \$$CREDIT_BALANCE$ on account beginning in $ACCOUNT_NBR_FIRST_FOUR$. No payment is due at this time.
+</NO_PAYMENT_DUE>
+
+<NO_PAYMENT_DUE_ZERO_BALANCE>
+    Alliant Energy: Current bal: \$0 for account beginning in $ACCOUNT_NBR_FIRST_FOUR$. No payment is due at this time.
+</NO_PAYMENT_DUE_ZERO_BALANCE>
+
+<POSTING_PAYMENT_METHOD_NEEDED>
+    Alliant Energy: Please select a payment method:\n $PAYMENT_METHOD_LIST$
+</POSTING_PAYMENT_METHOD_NEEDED>
+
+<POSTING_PAYMENT_AMOUNT_NEEDED>
+    Alliant Energy: Select a payment amount:\n $PAYMENT_AMOUNT_LIST$
+</POSTING_PAYMENT_AMOUNT_NEEDED>
+
+<POSTING_PAYMENT_NOMATCH>
+    Alliant Energy: Invalid choice selected. Please try again.
+</POSTING_PAYMENT_NOMATCH>
+
+<POSTING_RETRIES_EXCEEDED>
+    Alliant Energy: You have exceeded the number of retries. Please try again later.
+</POSTING_RETRIES_EXCEEDED>
+
+<POSTING_RETRIES_EXCEEDED_WEB_USER_ID>
+    Alliant Energy: You have exceeded the number of retries. If you can't remember your User ID, go to bit.ly/2j5jPUO for help or call us at 1-800-255-4268.
+</POSTING_RETRIES_EXCEEDED_WEB_USER_ID>
+
+<POSTING_PAYMENT_FORMAT>
+    Alliant Energy: Please enter a payment amount. Amount must be greater than \$1 and can be up to $AMOUNT_DUE$.
+</POSTING_PAYMENT_FORMAT>
+
+<APP>
+    Alliant Energy: Thank you for your interest in our Mobile App! Android users can download it at bit.ly/2Bh1Svm. Apple users can download it at apple.co/2AaFTZV
+</APP>

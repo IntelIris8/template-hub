@@ -1,0 +1,45 @@
+<CONTACT_AUTO_PAUSED>
+    <SUBJECT>Contact Paused</SUBJECT>
+    <TITLE>CONTACT PAUSED</TITLE>
+    <MESSAGE>
+        <p style="padding-left: 20px">Dear Alliant Energy Customer,<br /><br/>
+        <p style="padding-left: 20px">We believe we are sending you too many messages. Your alerts for this device have been auto-paused until {{jodaDateTime PausedUntil 'MM/dd/yyyy hh:mm a'}}.
+            If you wish to continue receiving these alerts, please click <a href="{{{g_resume_link}}}?{{#resumeLink}}{{{resumeParams}}}{{/resumeLink}}">here</a>.</p>
+    </MESSAGE>
+
+    <LEFT_BOTTOM>
+        <td class="leftBottom" style="width: 180px;background-color: #f5f5f5;vertical-align: bottom;padding: 10px 30px 50px 30px;font-size: 0.7em;font-weight: bold;">
+            <p>This email was sent to <strong>{{{Contact.contact}}}</strong>.</p>
+            <p>Log in to <a href="{{{g_my_account_link}}}" style="color: #00b4eb;font-weight: bold;">{{{g_my_account_link_text}}}</a> to update your email address, manage alert preferences
+                {{#stopLinks}}or <a href="{{{g_unsubscribe_link}}}?{{{stopAllParams}}}" style="color: #00b4eb;font-weight: bold;">unsubscribe</a>.{{/stopLinks}}</p>
+            <p>This is an automated message. Please do not reply.</p>
+        </td>
+    </LEFT_BOTTOM>
+    <header_image>{{{g_email_content_location}}}payment-email-header.png</header_image>
+</CONTACT_AUTO_PAUSED>
+
+
+<POSTING_CONTACT_CONFIRMATION_REQUIRED>
+    <SUBJECT>Please confirm to complete your registration</SUBJECT>
+    <TITLE>EMAIL CONFIRMATION</TITLE>
+    <MESSAGE>
+        <p style="padding-left: 20px">Dear Alliant Energy Customer,<br /><br/>
+            Thank you for registering for Alliant Energy Alerts.<br /><br />
+            Please review our <a href="{{{g_terms_conditions_link}}}">Terms and Conditions</a>.<br /><br />
+            To confirm your registration {{#confirmLink}}<a href="{{{g_confirmation_link}}}?{{#confirmLink}}{{{confirmParams}}}{{/confirmLink}}">click here</a>{{/confirmLink}}.</p>
+    </MESSAGE>
+    <header_image>{{{g_email_content_location}}}payment-email-header.png</header_image>
+</POSTING_CONTACT_CONFIRMATION_REQUIRED>
+
+
+
+<POSTING_REGISTRATION_AFFIRMATION>
+    <SUBJECT>Alliant Energy Registration</SUBJECT>
+    <TITLE>REGISTRATION SUCCESSFUL</TITLE>
+    <MESSAGE>
+        <p style="padding-left: 20px">Dear Alliant Energy Customer,<br /><br/>
+            Thank you for registering for Alliant Energy Alerts.<br /><br />
+        To make changes, <a href="{{{g_my_account_link}}}">log in</a> and visit your notification options.</p>
+    </MESSAGE>
+    <header_image>{{{g_email_content_location}}}payment-email-header.png</header_image>
+</POSTING_REGISTRATION_AFFIRMATION>
